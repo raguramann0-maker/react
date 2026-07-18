@@ -1,0 +1,148 @@
+/* =========================
+   SIDEBAR
+========================= */
+
+.sidebar{
+  width:260px;
+  height:100vh;
+  background:linear-gradient(180deg,#0f172a,#1e3a8a,#2563eb);
+  position:fixed;
+  left:0;
+  top:0;
+  padding:35px 20px;
+  display:flex;
+  flex-direction:column;
+  gap:25px;
+  box-shadow:5px 0 25px rgba(0,0,0,0.25);
+}
+
+
+.sidebar h2{
+  color:white;
+  text-align:center;
+  font-size:32px;
+  margin-bottom:30px;
+  font-weight:700;
+  letter-spacing:1px;
+}
+
+
+
+.sidebar a{
+  text-decoration:none;
+  color:white;
+  background:rgba(255,255,255,0.08);
+  padding:16px 20px;
+  border-radius:14px;
+  font-size:18px;
+  font-weight:500;
+  transition:0.4s;
+  position:relative;
+  overflow:hidden;
+}
+
+
+.sidebar a:hover{
+  background:linear-gradient(135deg,#06b6d4,#3b82f6);
+  transform:translateX(10px) scale(1.03);
+  box-shadow:0 10px 25px rgba(59,130,246,0.4);
+}
+
+
+
+.sidebar a:active{
+  transform:scale(0.96);
+}
+
+
+
+.sidebar a::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:-100%;
+  width:100%;
+  height:100%;
+  background:rgba(255,255,255,0.2);
+  transition:0.5s;
+}
+
+.sidebar a:hover::before{
+  left:100%;
+}
+
+
+
+@media(max-width:768px){
+
+  .sidebar{
+    width:100%;
+    height:auto;
+    position:relative;
+    flex-direction:row;
+    justify-content:center;
+    align-items:center;
+    flex-wrap:wrap;
+  }
+
+  .sidebar h2{
+    width:100%;
+    margin-bottom:10px;
+  }
+  /* =========================
+   PRODUCT CARD EFFECT
+========================= */
+
+.product-card{
+  background:white;
+  border-radius:22px;
+  overflow:hidden;
+  transition:0.5s;
+  position:relative;
+  box-shadow:0 10px 25px rgba(0,0,0,0.08);
+}
+
+.product-card:hover{
+  transform:translateY(-12px) rotate(1deg);
+  box-shadow:0 18px 40px rgba(37,99,235,0.25);
+}
+
+/* GLOW BORDER EFFECT */
+
+.product-card::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:22px;
+  padding:2px;
+  background:linear-gradient(
+    135deg,
+    #06b6d4,
+    #3b82f6,
+    #9333ea,
+    #ec4899
+  );
+
+
+
+
+}
+
+.product-card:hover::before{
+  opacity:1;
+}
+
+/* IMAGE EFFECT */
+
+.product-image{
+  width:100%;
+  height:250px;
+  object-fit:cover;
+  transition:0.5s;
+}
+
+.product-card:hover .product-image{
+  transform:scale(1.08);
+}
+
+}
